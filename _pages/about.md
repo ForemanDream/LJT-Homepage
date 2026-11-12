@@ -9,7 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
-Junteng Liu is a first-year PhD candidate in the [HKUST NLP Group](https://hkust.edu.hk/), where he is supervised by Professor Junxian He. He graduated from Shanghai Jiao Tong University (SJTU) in June 2024 with a B.Eng. (2020–2024). His research focuses on natural language processing and machine learning, with interests in LLM reasoning and reinforcement learning, hallucination in vision-language models (VLMs), LLM truthfulness, and interpretability. He is currently a Research Intern at MINIMAX (February 2025–Present).
+Junteng Liu is a first-year PhD candidate in the HKUST NLP Group, where he is supervised by Professor Junxian He. He graduated from Shanghai Jiao Tong University (SJTU) in June 2024 with a B.Eng. (2020–2024). His research focuses on natural language processing and machine learning, with interests in LLM reasoning and reinforcement learning, hallucination in vision-language models (VLMs), LLM truthfulness, and interpretability. He is currently a Research Intern at MINIMAX (February 2025–Present).
 
 ## Contact Information
 
@@ -54,7 +54,7 @@ Junteng Liu is a first-year PhD candidate in the [HKUST NLP Group](https://hkust
 
 ## Publications
 
-All publications recorded in memory are listed below. They are also available on the separate [Publications page]({{ base_path }}/publications/) and on [Google Scholar](https://scholar.google.com/citations?hl=en&user=tbK9jl4AAAAJ&view_op=list_works&sortby=pubdate).
+All publications are listed below. They are also available on the separate [Publications page]({{ base_path }}/publications/) and on [Google Scholar](https://scholar.google.com/citations?hl=en&user=tbK9jl4AAAAJ&view_op=list_works&sortby=pubdate).
 
 1. **SynLogic: Synthesizing Verifiable Reasoning Data at Scale for Learning Logical Reasoning and Beyond** (arXiv, 2025). First author: Junteng Liu. Co-authors: Yuanxiang Fan, Zhuo Jiang, Han Ding, Yongyi Hu, Chi Zhang, Yiqi Shi, Shitong Weng, Aili Chen, Shiqi Chen, Yunan Huang, Mozhi Zhang, Pengyu Zhao, Junjie Yan, Junxian He. A GitHub code repository is available.
 2. **On the Perception Bottleneck of VLMs for Chart Understanding** (arXiv, 2025). First author: Junteng Liu. Co-authors: Weihao Zeng, Xiwen Zhang, Yijun Wang, Zifei Shan, Junxian He. GitHub code repository: `Vision4Chart`.

@@ -1,6 +1,6 @@
-# Site settings
 locale: "en-US"
 site_theme: "default"
+
 title: "Junteng Liu"
 title_separator: "-"
 name: "Junteng Liu"
@@ -9,7 +9,7 @@ url: "https://foremandream.github.io"
 baseurl: "/LJT-Homepage"
 repository: "ForemanDream/LJT-Homepage"
 
-# Author profile
+# Sidebar profile (blank optional fields are intentionally omitted).
 author:
   avatar: "https://github.com/Vicent0205.png"
   name: "Junteng Liu"
@@ -20,14 +20,13 @@ author:
   github: "Vicent0205"
   twitter: "junteng88716710"
 
-# Publication categories
 publication_category:
   manuscripts:
     title: "Preprints"
   conferences:
     title: "Conference Papers"
 
-# Theme settings
+# Site behavior and theme options.
 teaser:
 breadcrumbs: false
 words_per_minute: 160
@@ -41,10 +40,9 @@ atom_feed:
 
 comments:
   provider:
-  disqus:
-    shortname:
-  discourse:
-    server:
+
+disqus:
+  shortname:
 
 analytics:
   provider: false
@@ -53,10 +51,6 @@ analytics:
 
 twitter:
   username: "junteng88716710"
-facebook:
-  username:
-  app_id:
-  publisher:
 
 og_image:
 og_description: "Junteng Liu — PhD candidate at HKUST NLP Group."
@@ -69,50 +63,8 @@ social:
     - "https://scholar.google.com/citations?hl=en&user=tbK9jl4AAAAJ&view_op=list_works&sortby=pubdate"
     - "https://twitter.com/junteng88716710"
 
-google_site_verification:
-bing_site_verification:
-alexa_site_verification:
-yandex_site_verification:
-
-# File handling
-include:
-  - .htaccess
-  - _pages
-  - files
-
-exclude:
-  - "*.sublime-project"
-  - "*.sublime-workspace"
-  - .asset-cache
-  - .bundle
-  - .github
-  - .jekyll-assets-cache
-  - .sass-cache
-  - CHANGELOG
-  - Capfile
-  - config
-  - Dockerfile
-  - Gemfile
-  - Gruntfile.js
-  - gulpfile.js
-  - LICENSE
-  - local
-  - log
-  - node_modules
-  - package.json*
-  - Rakefile
-  - README
-  - tmp
-  - vendor
-
-keep_files:
-  - .git
-  - .svn
-
 encoding: "utf-8"
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
-
-# Markdown rendering
 markdown: kramdown
 highlighter: rouge
 lsi: false
@@ -130,7 +82,29 @@ kramdown:
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
 
-# Collections
+include:
+  - .htaccess
+  - _pages
+  - files
+
+exclude:
+  - .asset-cache
+  - .bundle
+  - .github
+  - .jekyll-assets-cache
+  - .sass-cache
+  - Dockerfile
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - package.json
+  - README.md
+  - vendor
+
+keep_files:
+  - .git
+  - .svn
+
 collections:
   teaching:
     output: true
@@ -145,7 +119,6 @@ collections:
     output: true
     permalink: /:collection/:path/
 
-# Collection defaults
 defaults:
   - scope:
       path: ""
@@ -195,10 +168,8 @@ defaults:
       author_profile: true
       share: true
 
-# Output settings
-theme: minima
+timezone: "Etc/UTC"
 permalink: /:categories/:title/
-timezone: Etc/UTC
 
 plugins:
   - jekyll-feed
