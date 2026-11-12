@@ -3,7 +3,6 @@ title: "In-Context Sharpness as Alerts: An Inner Representation Perspective for 
 collection: publications
 category: conferences
 pub_order: 4
-date: "2024"
 venue: "ICML"
 permalink: /publications/in-context-sharpness-alerts/
 excerpt: "Shiqi Chen, Miao Xiong, Junteng Liu, Zhengxuan Wu, Teng Xiao, Siyang Gao, Junxian He. Published at ICML 2024."
