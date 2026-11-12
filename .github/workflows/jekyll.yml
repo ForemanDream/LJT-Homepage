@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  pages: write
 
 concurrency:
   group: "pages"
@@ -35,21 +36,27 @@ jobs:
             _drafts \
             _portfolio \
             _posts \
+            _publications \
             _talks \
             _teaching \
             files \
             images/themes \
             images/wiki \
             markdown_generator \
+            scripts \
             talkmap
 
           rm -f \
             AGENTS.md \
+            Dockerfile \
+            _config_docker.yml \
+            docker-compose.yaml \
             images/500x300.png \
             images/bio-photo-2.jpg \
             images/bio-photo.jpg \
             images/editing-talk.png \
             images/profile.png \
+            package.json \
             talkmap.html \
             talkmap.ipynb \
             talkmap.py \
@@ -65,7 +72,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "No starter-content cleanup needed."
           else
-            git commit -m "Remove unused starter pages and sample content"
+            git commit -m "Remove remaining starter content from site build"
             git push origin HEAD:master
           fi
 
@@ -104,3 +111,22 @@ jobs:
           publish_branch: gh-pages
           force_orphan: true
           commit_message: "Deploy Junteng Liu homepage"
+
+      - name: Configure GitHub Pages source (best effort)
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api --method POST \
+            -H "Accept: application/vnd.github+json" \
+            "repos/${GITHUB_REPOSITORY}/pages" \
+            -f build_type=legacy \
+            -f "source[branch]=gh-pages" \
+            -f "source[path]=/" || true
+
+          gh api --method PUT \
+            -H "Accept: application/vnd.github+json" \
+            "repos/${GITHUB_REPOSITORY}/pages" \
+            -f build_type=legacy \
+            -f "source[branch]=gh-pages" \
+            -f "source[path]=/" || true
