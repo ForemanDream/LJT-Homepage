@@ -19,6 +19,56 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Remove unused starter pages and sample content
+        run: |
+          set -euo pipefail
+
+          if [ -d _pages ]; then
+            find _pages -maxdepth 1 -type f \
+              ! -name '404.md' \
+              ! -name 'about.md' \
+              ! -name 'publications.html' \
+              -print -delete
+          fi
+
+          rm -rf \
+            _drafts \
+            _portfolio \
+            _posts \
+            _talks \
+            _teaching \
+            files \
+            images/themes \
+            images/wiki \
+            markdown_generator \
+            talkmap
+
+          rm -f \
+            AGENTS.md \
+            images/500x300.png \
+            images/bio-photo-2.jpg \
+            images/bio-photo.jpg \
+            images/editing-talk.png \
+            images/profile.png \
+            talkmap.html \
+            talkmap.ipynb \
+            talkmap.py \
+            talkmap_out.ipynb \
+            .github/workflows/bad-pr.yml \
+            .github/workflows/lock-closed-cron.yml \
+            .github/workflows/scrape_talks.yml
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+
+          if git diff --cached --quiet; then
+            echo "No starter-content cleanup needed."
+          else
+            git commit -m "Remove unused starter pages and sample content"
+            git push origin HEAD:master
+          fi
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
